@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelis: MyString
+  razotajs: MyString
+  serijasnr: MyString
+  valsts: MyString
+  eksempsk: 1
+  cena: 1
+  papildinformacija: MyString
+  vertejums: 1
+
+two:
+  modelis: MyString
+  razotajs: MyString
+  serijasnr: MyString
+  valsts: MyString
+  eksempsk: 1
+  cena: 1
+  papildinformacija: MyString
+  vertejums: 1

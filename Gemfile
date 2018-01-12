@@ -9,8 +9,8 @@ end
 # Custom project gems
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'jquery-rails'
-
-
+gem 'devise'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
