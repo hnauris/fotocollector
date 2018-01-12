@@ -1,2 +1,68 @@
-<h1>Kameras#new</h1>
-<p>Find me in app/views/kameras/pievienot.html.erb</p>
+<h2>Jaunas kameras ievade</h2>
+<hr></hr>
+
+<%= form_for @kamera do |f| %>
+  <div class="form-group">
+    <div class="control-label">
+      <%= f.label "Modelis" %>
+    </div>
+    <div class="">
+      <%= f.text_field :modelis %>
+    </div>
+
+    <div class="control-label">
+      <%= f.label "Ražotājs" %>
+    </div>
+    <div class="">
+      <%= f.text_field :razotajs %>
+    </div>
+    
+    <div class="control-label">
+      <%= f.label "Sērijas Numurs" %>
+    </div>
+    <div class="">
+      <%= f.text_field :serijasnr %>
+    </div>
+
+    <div class="control-label">
+      <%= f.label "valsts" %>
+    </div>
+    <div class="">
+      <%= f.text_field :valsts %>
+    </div>
+
+    <div class="control-label">
+      <%= f.label "Eksemplāru skaits" %>
+    </div>
+    <div class="">
+      <%= f.text_field :eksempsk %>
+    </div>
+
+    <div class="control-label">
+      <%= f.label "Cena" %>
+    </div>
+    <div class="">
+      <%= f.text_field :cena %>
+    </div>
+
+    <div class="control-label">
+      <%= f.label "Papildinformācija" %>
+    </div>
+    <div class="">
+      <%= f.text_field :papildinformacija, class: 'form-control', placeholder: '....', autofocus: true %>
+    </div>
+
+    <div class="control-label">
+        <%= f.label "Vērtējums" %>
+    </div>
+    <div class="">
+        <%= f.text_field :vertejums %>
+    </div>
+
+    <div class="">
+      </br>
+      <%= f.submit "Pievienot", class: 'btn btn-primary btn-lg' %>
+    </div>
+  </div>
+
+<% end %>
