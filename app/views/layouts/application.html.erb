@@ -14,13 +14,15 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <% if !user_signed_in? %>
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <%= link_to  "Ielogoties", new_user_session_path, class: "nav-link" %>
+                  <%= link_to  "Ielogoties", new_user_session_path, class: "nav-link" %>
               </li>
             </ul>
           </div>
+          <% end %>
           <% if user_signed_in? %>
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav mr-auto">
@@ -49,6 +51,16 @@
         <% end %>
         
         <main role="main" class="container main-content">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                  <% flash.each do |name, msg| %>
+                    <div class='"alert alert-<%="#{name}" %>'>
+                      <a href="#" class="close" data-dismiss="alert"></a>
+                      <%= content_tag :div, msg, :id => "flash_#{name}", align: 'center' if msg.is_a?(String) %>
+                    </div>
+                  <% end %>
+                </div>
+        </div>
             <%= yield %>
         </main>
     

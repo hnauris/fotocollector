@@ -1,4 +1,6 @@
-<h1>Informācija</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, delectus non 
-    aliquid impedit iusto autem minus odit perferendis mollitia 
-    assumenda est illo. Id quam sapiente quos distinctio nesciunt fuga quod!</p>
+<%if user_signed_in? %>
+    <h1>Sveiks, <%= current_user.email %></h1>
+<% else %>
+    <h1>Lai izmantotu šo lietotni, nepieciešams ielogoties!</h1>
+<% end %>
+
