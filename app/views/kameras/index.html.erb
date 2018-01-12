@@ -1,2 +1,64 @@
-<h1>Kameras#index</h1>
-<p>Find me in app/views/kameras/kopsavilkums.html.erb</p>
+<h1 align="center">Kameru saraksts</h1>
+<hr>
+
+<div>
+    <div class="row">
+        <div class="col-md-1"><small style="font-weight:bold">Foto</small></div>
+        <div class="col-md-2"><small style="font-weight:bold">Modelis</small></div>
+        <div class="col-md-2"><small style="font-weight:bold">Ražotājs</small></div>
+        <div class="col-md-1"><small style="font-weight:bold">Sērijas Nr.</small></div>
+        <div class="col-md-1"><small style="font-weight:bold">Valsts</small></div>
+        <div class="col-md-1"><small style="font-weight:bold">Eksemplāri</small></div>
+        <div class="col-md-1"><small style="font-weight:bold">Cena</small></div>
+        <div class="col-md-2"><small style="font-weight:bold">Papildinformācija</small></div>
+        <div class="col-md-1"><small style="font-weight:bold">Vērtējums</small></div>
+    </div>
+</div>
+
+<br>
+
+
+
+<% @user.kameras.each do |x| %>
+    <div class="well">
+        <div class="row">
+           <div class="col-md-1 smlpad lolclass">
+                <%= image_tag x.photo.url(:thumb) %>
+                <%= link_to edit_kamera_path(x.id) do %>
+                    <%= image_tag  "edit-icon.png", width: 25, height: 25 %>
+                <% end %>
+                <%= link_to kamera_path(x.id), method: :delete, data: {confirm: "Vai tiešām vēlaties šo ierakstu dzēst?"} do %>
+                    <%= image_tag  "delete-icon.png", width: 25, height: 25 %>
+                <% end %>
+           </div> 
+           <div class="col-md-2 smlpad">
+                <small><%= x.modelis.truncate(25) %></small>  
+           </div>
+           <div class="col-md-2 smlpad">
+                <small><%= x.razotajs.truncate(25) %></small> 
+           </div>
+           <div class="col-md-1 smlpad">
+                <small><%= x.serijasnr.truncate(13) %></small>  
+           </div>
+           <div class="col-md-1 smlpad">
+                <small><%= x.valsts.truncate(13) %></small>  
+           </div>
+           <div class="col-md-1 smlpad">
+                <small><%= x.eksempsk.truncate(7) %></small>  
+           </div>
+           <div class="col-md-1 smlpad">
+                <small><%= x.cena.truncate(7) %></small>  
+           </div>
+           <div class="col-md-2 smlpad">
+                <small><%= x.papildinformacija.truncate(25) %></small> 
+           </div>
+           <div class="col-md-1 smlpad">
+                <small><%= x.vertejums.truncate(10) %></small>   
+           </div>
+        </div>
+    </div>
+    <hr>
+<% end %>
+
+
+
