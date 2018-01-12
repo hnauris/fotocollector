@@ -1,8 +1,8 @@
 class KamerasController < ApplicationController
-  def kolekcija
+  def index
   end
 
-  def pievienot
+  def new
   end
 
   def kopsavilkums

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  
   root 'pages#welcome'
+
   resources :kameras
 
   devise_for :users
