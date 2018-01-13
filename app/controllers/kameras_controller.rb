@@ -30,13 +30,14 @@ class KamerasController < ApplicationController
   end
 
   def update
-    @kamera = Kamera.find[params[:id]]
+    @kamera = Kamera.find(params[:id])
+    @kamera.update(kamera_params)
     if @kamera.save
       flash[:success] = 'Kameras dati tika veiksmīgi atjaunināti!'
       redirect_to kameras_path
     else
       flash[:danger] = @kamera.errors.full_messages
-      render 'edit'
+      redirect_to kameras_path
     end
   end
 
